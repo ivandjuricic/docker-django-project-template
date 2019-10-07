@@ -28,6 +28,6 @@ test:
 	docker-compose run app pytest
 
 teardown:
-    docker-compose down -v
+	docker-compose down -v
 	docker-compose kill
 	docker-compose rm -f -v
