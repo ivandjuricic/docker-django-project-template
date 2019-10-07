@@ -4,7 +4,7 @@
 
 Example of usage:
 
-`django-admin startproject MYNEWPROJECT --template=https://github.com/ivandjuricic/docker-django-project-template/archive/master.zip --extension=py,md,ini`
+`django-admin startproject MYNEWPROJECT --template=https://github.com/ivandjuricic/docker-django-project-template/archive/master.zip --extension=py,md,ini,yml`
 
 The command above will create new project under provided path (if no path provided directory will be create with the project name).
 
