@@ -5,6 +5,10 @@ services:
     image: postgres
     volumes:
       - app:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: django
+      POSTGRES_PASSWORD: djangopass
+      POSTGRES_DB: db
   app:
     build: .
     command: python manage.py runserver 0.0.0.0:8000 --settings={{ project_name }}.settings.local
