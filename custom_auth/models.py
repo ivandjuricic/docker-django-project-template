@@ -5,7 +5,7 @@ from django.contrib.auth.models import (
 
 
 class AuthUserManager(BaseUserManager):
-    def create_user(self, email, date_of_birth, password=None):
+    def create_user(self, email, password=None):
         """
         Creates and saves a User with the given email, date of
         birth and password.
@@ -14,23 +14,21 @@ class AuthUserManager(BaseUserManager):
             raise ValueError('Users must have an email address')
 
         user = self.model(
-            email=self.normalize_email(email),
-            date_of_birth=date_of_birth,
+            email=self.normalize_email(email)
         )
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, date_of_birth, password):
+    def create_superuser(self, email, password):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
         """
         user = self.create_user(
             email,
-            password=password,
-            date_of_birth=date_of_birth,
+            password=password
         )
         user.is_admin = True
         user.save(using=self._db)
@@ -38,7 +36,6 @@ class AuthUserManager(BaseUserManager):
 
 
 class AuthUser(AbstractBaseUser):
-    username = models.CharField(max_length=50, blank=True, null=True)
     first_name = models.CharField(max_length=25, blank=True, null=True)
     last_name = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(
