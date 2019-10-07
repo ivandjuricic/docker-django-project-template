@@ -18,6 +18,8 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    environment:
+      DJANGO_SETTINGS_MODULE: {{ project_name }}.settings.local
   # redis:
   #   container_name: "redis"
   #   image: 'redis:3.2.0'
