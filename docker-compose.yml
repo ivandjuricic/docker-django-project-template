@@ -7,7 +7,7 @@ services:
       - app:/var/lib/postgresql/data
   app:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000 {{ project_name }}.settings.local
+    command: python manage.py runserver 0.0.0.0:8000 --settings={{ project_name }}.settings.local
     volumes:
       - .:/app
     ports:
