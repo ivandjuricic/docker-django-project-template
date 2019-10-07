@@ -30,6 +30,7 @@ DEBUG = True if os.getenv("DEBUG") == "True" else False
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'custom_auth.AuthUser'
 
 # Application definition
 
@@ -81,10 +82,10 @@ WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'HOST': os.getenv("DB_PASSWORD"),
+        'PORT': os.getenv("DB_PORT"),
     }
 }
 
