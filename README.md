@@ -8,3 +8,17 @@ Example of usage:
 
 The command above will create new project under provided path (if no path provided directory will be create with the project name).
 
+Simple
+
+`docker-compose up` will run the server. 
+
+Alternatively, Makefile is added to templates with provided commands:
+* startapp
+* runserver
+* migrations
+* migrate
+* createsuperuser
+* createuser
+* shell
+* test
+* teardown
