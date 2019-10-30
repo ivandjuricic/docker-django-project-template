@@ -3,6 +3,7 @@ psycopg2>=2.7,<3.0
 python-dotenv
 django-countries
 djangorestframework
+gunicorn
 # testing
 pytest
 pytest-django
