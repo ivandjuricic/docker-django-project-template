@@ -11,13 +11,15 @@ services:
       POSTGRES_DB: db
   app:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000 --settings={{ project_name }}.settings.local
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
       - "8000:8000"
     depends_on:
       - db
+    environment:
+      DJANGO_SETTINGS_MODULE: {{ project_name }}.settings.local
     env_file: .env
   # redis:
   #   container_name: "redis"
