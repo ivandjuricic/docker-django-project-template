@@ -2,28 +2,28 @@ runserver:
 	docker-compose up
 
 migrations:
-	docker-compose run web python manage.py makemigrations
+	docker-compose run app python manage.py makemigrations
 
 migrate:
-	docker-compose run web python manage.py migrate
+	docker-compose run app python manage.py migrate
 
 createsuperuser:
-	docker-compose run web python manage.py createsuperuser
+	docker-compose run app python manage.py createsuperuser
 
 createuser:
-	docker-compose run web python manage.py createuser
+	docker-compose run app python manage.py createuser
 
 static:
-	docker-compose run web python manage.py collectstatic --no-input
+	docker-compose run app python manage.py collectstatic --no-input
 
 translate:
-	docker-compose run web python manage.py compilemessages
+	docker-compose run app python manage.py compilemessages
 
 shell:
-	docker-compose run web python manage.py shell
+	docker-compose run app python manage.py shell
 
 test:
-	docker-compose run web pytest
+	docker-compose run app pytest
 
 docker-production:
 	docker build . -t production
