@@ -9,8 +9,13 @@ Example of usage:
 The command above will create new project under provided path (if no path provided directory will be create with the project name).
 
 Simple
+```
+make migrate
+make runserver
+```
+will start the development server. 
 
-`docker-compose up` or `make runserver` will run the server. 
+To access the admin portal, run `make createsuperuser` and the command line will guide you through creation of user with admin privileges
 
 Alternatively, Makefile is added to templates with provided commands:
 * `runserver`
