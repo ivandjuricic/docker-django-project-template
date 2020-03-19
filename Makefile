@@ -19,11 +19,17 @@ createuser:
 static:
 	docker-compose run app python manage.py collectstatic --no-input
 
+messages:
+	docker-compose run app python manage.py makeemessages
+
 translate:
 	docker-compose run app python manage.py compilemessages
 
 shell:
 	docker-compose run app python manage.py shell
+
+bash:
+	docker-compose run app bash
 
 test:
 	docker-compose run app pytest
